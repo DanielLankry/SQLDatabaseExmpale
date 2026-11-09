@@ -13,7 +13,10 @@ public class SQLDATA {
 		Scanner s = new Scanner(System.in);
 		String url = "jdbc:postgresql://localhost:5432/Exercises";
 		String username = "postgres";
-		String password = "admin";
+		String password = System.getenv("DB_PASSWORD");
+		if (password == null || password.isEmpty()) {
+			throw new IllegalStateException("Set DB_PASSWORD in your environment before running this sample.");
+		}
 
 		boolean isvaild = false;
 		while (!isvaild) {

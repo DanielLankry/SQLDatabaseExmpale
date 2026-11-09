@@ -1,0 +1,7 @@
+# Local credentials
+.env
+.env.*
+!.env.example
+
+# Java build output
+*.class
